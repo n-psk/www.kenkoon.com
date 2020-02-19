@@ -1,0 +1,44 @@
+.cycle-nav_index {
+	bottom: 160px;
+	position: absolute;
+	left: 50%;
+}
+
+.cycle-nav_index ul {
+	list-style-type:none;
+	overflow: hidden;
+	margin: auto;
+	position: relative;
+	left: -50%;
+	text-align: center;
+	height: 16px;
+}
+
+.cycle-nav_index ul li {
+	float: left;
+	margin: 0 10px;
+}
+
+.cycle-nav_index ul li a {
+	background-color: #999;
+	float: left;
+	height: 7px;
+	width: 7px;
+	margin: 2px;
+	opacity: .6;
+	border-radius: 9px;
+	-webkit-border-radius: 9px;
+}
+
+.cycle-nav_index ul li.activeSlide  {
+	border: 1px solid #999;
+	background-color: transparent;
+	border-radius: 9px;
+	-webkit-border-radius: 9px;
+	opacity: 1;
+	position: relative;
+}
+
+.cycle-nav_index ul li.activeSlide a {
+	background-color: transparent;
+}

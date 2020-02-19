@@ -1,0 +1,116 @@
+/*	----------------------------------------------------------------
+	MaxCycle (Fullscreen Slideshow for use with jQuery Cycle Plugin)
+	----------------------------------------------------------------
+	
+	Demo at: http://www.aaronvanderzwan.com/maxcycle/
+	Download and Info at: http://github.com/akv2/MaxCycle---jQuery-Plugin/
+	Copyright (c) 2007-2011 Aaron Vanderzwan
+	Dual licensed under the MIT and GPL licenses.
+	
+*/
+/*! Version: 2.0.73 (12-Oct-2012) */
+
+.maximage, .maximage_inside {
+	position:relative !important;
+}
+
+.mc-hide-scrolls{
+	overflow:hidden;
+}
+
+body .mc-cycle {
+	height:100%;
+	left:0;
+	overflow:hidden;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:0;
+}
+
+div.mc-image {
+	/*NOTE: Mozilla flickers when fading and using 'all', so we have to be specific with what property we want to transition:
+	 	If you are using fading transitions, use 'opacity: */
+	-webkit-transition: opacity 1s ease-in-out; 
+	-moz-transition: opacity 1s ease-in-out; 
+	-o-transition: opacity 1s ease-in-out; 
+	transition: opacity 1s ease-in-out;
+	
+	/*If you are using horizontal slide transitions, use the following CSS:
+	-webkit-transition: left 1s ease-in-out; 
+	-moz-transition: left 1s ease-in-out; 
+	-o-transition: left 1s ease-in-out; 
+	transition: left 1s ease-in-out;*/
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+.mc-old-browser .mc-image {
+	overflow: hidden;
+}
+
+.cycle-nav {
+    float: left;
+}
+
+.cycle-nav ul {
+    list-style-type: none;
+}
+
+.cycle-nav ul li {
+	display: inline-block;
+    margin: 0 10px 0 0;
+    height: 65px;
+	z-index: 1px;
+}
+
+.cycle-nav ul li a {
+    float: left;
+    width: auto;
+	opacity: 0.8;
+}
+
+.no-touch .cycle-nav ul li:hover a, 
+.cycle-nav ul li.activeSlide a {
+	opacity: 1;
+}
+
+.video_icon {
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	top: 20px;
+	right: 60px;
+	color: #ca9e67;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.video_icon .play_icon {
+	width: 40px;
+	height: 40px;
+	background: url(../images/icon-play.png) no-repeat;
+}
+
+.no-touch .video_icon:hover .play_icon {
+	background: url(../images/icon-play-actived.png) no-repeat;
+}
+
+.video_icon.actived .play_icon {
+	background: url(../images/icon-stop.png) no-repeat;
+}
+
+.no-touch .video_icon.actived:hover .play_icon {
+	background: url(../images/icon-stop-actived.png) no-repeat;
+}
+
+
+#video {display: none;position: relative;z-index:1;}
